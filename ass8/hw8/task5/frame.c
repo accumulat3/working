@@ -23,10 +23,10 @@ static void load_frame(frame_t *f, char *path){
         exit(EXIT_FAILURE);
 
     while ((read = getline(&line, &len, fp)) != -1) {
-        /*printf("Retrieved line of length %zu:\n", read);
-        printf("%s", line);*/
-		f->content = (char*) malloc(read*sizeof(char));
-		f->content = line;
+        //printf("Retrieved line of length %zu:\n", read);
+        //printf("%s", line);
+		f->content = (char*) realloc(f->content,(strlen(f->content) + read)*sizeof(char));
+		f->content = strcat(f->content, line);
     }
 
     fclose(fp);

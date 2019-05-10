@@ -36,7 +36,7 @@ int main() {
 	printf("How many frames per second?\n");
 	scanf("%d", &fps);
 
-	system("@cls||clear");
+	system("clear");
 	asciimation_t * ascm = asciimation_new(path, fps);
 	do {
 		printf ( "+-------------------------------------------+\n");
